@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 from turtlesim.srv import TeleportAbsolute
 from geometry_msgs.msg import Twist
 import math
@@ -12,13 +13,16 @@ pub = rospy.Publisher('/turtle1/cmd_vel',Twist,queue_size = 10)
 def moveTurtle():
 	rate = rospy.Rate(70.0)	
 	
-	T = 5 
+	
+	T = input('\n Enter a value for T (1/Hz): ') # for T=5 we should have around 354 msgs for a full lap
+ 
 	Pi = math.pi
-
+	
 	t0 = rospy.get_time()
 	
 	while not rospy.is_shutdown():
 		
+
 		t = rospy.get_time() - t0
 
 		
@@ -56,4 +60,4 @@ if __name__ == '__main__':
 		moveTurtle()
 	except rospy.ROSInterruptException: pass
 		
-	# 1413586204.81
+
