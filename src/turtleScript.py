@@ -14,7 +14,7 @@ def moveTurtle():
 	rate = rospy.Rate(70.0)	# Duration of the command rosply.sleep => 70 was the duration that gave the smoother 8 shape
 	
 	
-	T = input('\n Enter a value for T (1/Hz): ') 	# for T=5 we should have around 354 msgs for a full lap
+	T = input('\nEnter a value for T (1/Hz): ') 	# for T=5 we should have around 354 msgs for a full lap
  
 	Pi = math.pi					# define the value of PI
 		
@@ -56,5 +56,6 @@ if __name__ == '__main__':
 		rospy.init_node('steering_turtle', anonymous=True) # init node
 		moveTurtle()
 	except rospy.ROSInterruptException: pass
+
 		
 
